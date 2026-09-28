@@ -1,0 +1,22 @@
+.DS_Store
+*.swp
+Thumbs.db
+
+# 本地工作区数据（不入库）
+.workbuddy/
+
+# 临时文件
+tmp/
+*.tmp
+*.log
+
+# 个人账号/凭证（绝不入库）
+*.key
+*.pem
+.env
+.env.*
+credentials.json
+
+# 抓取脚本与中间产物
+scripts/fetch/
+*.har
