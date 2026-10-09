@@ -65,8 +65,10 @@ def split_questions(text):
 def main():
     all_codes = load_knowledge_codes()
     total_single = total_multi = 0
+    # 该校验器只负责 01～06 六个正式模块题库。07/08 等专项练习采用
+    # 不同题头和解析结构，不应被当作正式 50 题题库校验。
     files = sorted(f for f in os.listdir(QUIZ_DIR)
-                   if f.endswith(".md") and re.match(r"^\d\d-", f))
+                   if f.endswith(".md") and f[:2] in OFFICIAL)
 
     for fn in files:
         mid = fn[:2]
